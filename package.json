@@ -1,0 +1,23 @@
+{
+  "name": "instagram-giveaway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "count.js",
+  "scripts": {
+    "test": "node count.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Sukairo-02/Instagram-giveaway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sukairo-02/Instagram-giveaway/issues"
+  },
+  "homepage": "https://github.com/Sukairo-02/Instagram-giveaway#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "readline": "^1.3.0"
+  }
+}
