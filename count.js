@@ -1,25 +1,28 @@
 const fs = require('fs')
 
 function load(folder, cnt) {
-		const map = new Map()
-		for (let i = 0; i < cnt; ++i) {
-			const fData = fs.readFileSync(`${folder}out${i}.txt`).toString().split('\n')
+	const map = new Map()
+	for (let i = 0; i < cnt; ++i) {
+		const fData = fs
+			.readFileSync(`${folder}out${i}.txt`)
+			.toString()
+			.split('\n')
 
-			for (const line of fData) {
-				if (map.has(line)) {
-					const current = map.get(line)
-					current.files.add(i)
-					current.unique = false
-				} else {
-					map.set(line, {
-						files: new Set().add(i),
-						unique: true,
-					})
-				}
+		for (const line of fData) {
+			if (map.has(line)) {
+				const current = map.get(line)
+				current.files.add(i)
+				current.unique = false
+			} else {
+				map.set(line, {
+					files: new Set().add(i),
+					unique: true,
+				})
 			}
 		}
+	}
 
-		return map
+	return map
 }
 
 function uniqueValues(map) {
@@ -50,10 +53,7 @@ async function start() {
 	try {
 		const lines = load('./full/', 20).entries()
 		console.log('Unique values:', uniqueValues(lines))
-		console.log(
-			'Exist in at least ten:',
-			existInAtLeastTen(lines)
-		)
+		console.log('Exist in at least ten:', existInAtLeastTen(lines))
 		console.log('Exist in all files:', existInAllFiles(lines))
 	} catch (e) {
 		console.log(e)
