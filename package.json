@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/Sukairo-02/Instagram-giveaway#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "readline": "^1.3.0"
+    "fs": "^0.0.1-security"
   }
 }
